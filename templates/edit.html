@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>編集</title>
+</head>
+<body>
+    <h1>編集社員</h1>
+    <form method="POST" action="{{ url_for('edit_employee', employee_id=employee.id) }}">
+        <label for="employee_name">社員名:</label>
+        <input type="text" id="employee_name" name="employee_name" value="{{ employee.name }}" required>
+        <br>
+        <input type="submit" value="Save Changes">
+    </form>
+    <p><a href="{{ url_for('employee_list') }}">従業員一覧へ戻る</a></p>
+</body>
+</html>

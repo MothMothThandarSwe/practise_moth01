@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>従業員リスト</title>
+</head>
+<body>
+    <h1>従業員リスト</h1>
+    <ul>
+        {% for employee in employees %}
+            <li>
+                {{ employee.name }} - ({{ employee.id }})
+                <a href="{{ url_for('edit_employee', employee_id=employee.id) }}">編集</a>
+                | 
+                <a href="{{ url_for('delete_employee', employee_id=employee.id) }}">削除</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <p><a href="{{ url_for('home') }}">ホームページに戻る</a></p>
+    
+</body>
+</html>
